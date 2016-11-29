@@ -25,7 +25,7 @@ describe('Utilities', function () {
     systemHealthUtil.status(localSystems)
       .then((status) => {
         const outp = systemHealthUtil.renderText(status)
-        expect(outp.split('\n')[0].indexOf('OK')).not.to.equal(-1)
+        expect(outp.split('\n')[0].indexOf('APPLICATION_STATUS: OK')).not.to.equal(-1)
         done()
       })
   })
@@ -37,7 +37,7 @@ describe('Utilities', function () {
     systemHealthUtil.status(localSystems)
       .then((status) => {
         const outp = systemHealthUtil.renderText(status)
-        expect(outp.split('\n')[0].indexOf('ERROR')).not.to.equal(-1)
+        expect(outp.split('\n')[0].indexOf('APPLICATION_STATUS: ERROR')).not.to.equal(-1)
         done()
       })
   })
